@@ -42,29 +42,29 @@
 using namespace velma_core_ve_body_re_body_msgs;
 using namespace velma_core_ve_body_re_body_interface;
 
-typedef InterfaceTx<Status > VelmaLLILoTx;
-ORO_LIST_COMPONENT_TYPE(VelmaLLILoTx)
+typedef InterfaceTx<Status > VelmaCoreVeBodyReBodyStatusTx;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyStatusTx)
 
-typedef InterfaceRx<Status > VelmaLLIHiRx;
-ORO_LIST_COMPONENT_TYPE(VelmaLLIHiRx)
+typedef InterfaceRx<Status > VelmaCoreVeBodyReBodyStatusRx;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyStatusRx)
 
-typedef InterfaceTx<Command > VelmaLLIHiTx;
-ORO_LIST_COMPONENT_TYPE(VelmaLLIHiTx)
+typedef InterfaceTx<Command > VelmaCoreVeBodyReBodyCommandTx;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyCommandTx)
 
-typedef InterfaceRx<Command > VelmaLLILoRx;
-ORO_LIST_COMPONENT_TYPE(VelmaLLILoRx)
+typedef InterfaceRx<Command > VelmaCoreVeBodyReBodyCommandRx;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyCommandRx)
 
-typedef MessageSplit<VelmaCommand_Ports > VelmaLLICommandSplit;
-ORO_LIST_COMPONENT_TYPE(VelmaLLICommandSplit)
+typedef MessageSplit<VelmaCommand_Ports > VelmaCoreVeBodyReBodyCommandSplit;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyCommandSplit)
 
-typedef MessageConcate<VelmaStatus_Ports > VelmaLLIStatusConcate;
-ORO_LIST_COMPONENT_TYPE(VelmaLLIStatusConcate)
+typedef MessageConcate<VelmaStatus_Ports > VelmaCoreVeBodyReBodyStatusConcate;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyStatusConcate)
 
-typedef MessageSplit<VelmaStatus_Ports > VelmaLLIStatusSplit;
-ORO_LIST_COMPONENT_TYPE(VelmaLLIStatusSplit)
+typedef MessageSplit<VelmaStatus_Ports > VelmaCoreVeBodyReBodyStatusSplit;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyStatusSplit)
 
-typedef MessageConcate<VelmaCommand_Ports > VelmaLLICommandConcate;
-ORO_LIST_COMPONENT_TYPE(VelmaLLICommandConcate)
+typedef MessageConcate<VelmaCommand_Ports > VelmaCoreVeBodyReBodyCommandConcate;
+ORO_LIST_COMPONENT_TYPE(VelmaCoreVeBodyReBodyCommandConcate)
 
 ORO_CREATE_COMPONENT_LIBRARY()
 
