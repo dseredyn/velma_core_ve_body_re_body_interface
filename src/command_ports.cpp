@@ -95,11 +95,10 @@ FTSensorCommand_Ports<T >::FTSensorCommand_Ports(RTT::TaskContext &tc, const std
 template <template <typename Type> class T>
 VelmaCommand_Ports<T >::VelmaCommand_Ports(RTT::TaskContext &tc)
 {
-    addPort(boost::shared_ptr<PortInterface<Command > >(new Port<T, uint32_t, Command, Command::_test_type >(tc, "cmd_test", &Command::test)));
     addPort(boost::shared_ptr<PortInterface<Command > >(new ArmCommand_Ports<T >(tc, "cmd_rArm", &Command::rArm)), &Command::rArm_valid);
     addPort(boost::shared_ptr<PortInterface<Command > >(new ArmCommand_Ports<T >(tc, "cmd_lArm", &Command::lArm)), &Command::lArm_valid);
-    addPort(boost::shared_ptr<PortInterface<Command > >(new SimpleCommand_Ports<T >(tc, "cmd_rArmFri", &Command::rArmFri)), &Command::rArmFri_valid);
-    addPort(boost::shared_ptr<PortInterface<Command > >(new SimpleCommand_Ports<T >(tc, "cmd_lArmFri", &Command::lArmFri)), &Command::lArmFri_valid);
+    addPort(boost::shared_ptr<PortInterface<Command > >(new Port<T, std_msgs::Int32, Command, Command::_rArmFri_type >(tc, "cmd_rArmFri", &Command::rArmFri)), &Command::rArmFri_valid);
+    addPort(boost::shared_ptr<PortInterface<Command > >(new Port<T, std_msgs::Int32, Command, Command::_lArmFri_type >(tc, "cmd_lArmFri", &Command::lArmFri)), &Command::lArmFri_valid);
     addPort(boost::shared_ptr<PortInterface<Command > >(new HandCommand_Ports<T >(tc, "cmd_rHand", &Command::rHand)), &Command::rHand_valid);
     addPort(boost::shared_ptr<PortInterface<Command > >(new HandCommand_Ports<T >(tc, "cmd_lHand", &Command::lHand)), &Command::lHand_valid);
     addPort(boost::shared_ptr<PortInterface<Command > >(new SimpleCommand_Ports<T >(tc, "cmd_rTact", &Command::rTact)), &Command::rTact_valid);
