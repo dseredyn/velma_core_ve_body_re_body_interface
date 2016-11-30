@@ -90,7 +90,6 @@ FTSensorStatus_Ports<T >::FTSensorStatus_Ports(RTT::TaskContext &tc, const std::
 template <template <typename Type> class T>
 VelmaStatus_Ports<T >::VelmaStatus_Ports(RTT::TaskContext &tc)
 {
-    addPort(boost::shared_ptr<PortInterface<Status > >( new Port<T, uint32_t, Status, Status::_test_type >(tc, "status_test", &Status::test)));
     addPort(boost::shared_ptr<PortInterface<Status > >( new ArmStatus_Ports<T >(tc, "status_rArm", &Status::rArm) ), &Status::rArm_valid);
     addPort(boost::shared_ptr<PortInterface<Status > >( new ArmStatus_Ports<T >(tc, "status_lArm", &Status::lArm) ), &Status::lArm_valid);
     addPort(boost::shared_ptr<PortInterface<Status > >( new Port<T, tFriRobotState, Status, Status::_rArmFriRobot_type >(tc, "status_rArmFriRobot", &Status::rArmFriRobot)));
